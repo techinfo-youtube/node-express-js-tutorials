@@ -1,10 +1,13 @@
 const express = require("express");
-const { getUser, addUser } = require("../controllers/userCtrl");
+const { getUser, addUser, createUser } = require("../controllers/userCtrl");
 
 //routes router object
 const router = express.Router();
 
 //routes
+
+//CREATE NEW USER
+router.post("/create-user", createUser);
 
 //GET USER ||  METHOD = GET
 router.get("/", getUser);

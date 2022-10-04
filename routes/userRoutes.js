@@ -1,16 +1,23 @@
 const express = require("express");
-const { getUser, addUser } = require("../controllers/userCtrl");
+const {
+  createUser,
+  getAllUsers,
+  getSingleUser,
+} = require("../controllers/userCtrl");
 
 //routes router object
 const router = express.Router();
 
 //routes
 
-//GET USER ||  METHOD = GET
-router.get("/", getUser);
+//CREATE NEW USER
+router.post("/create-user", createUser);
 
-//POST USER || METHOD POST
-router.post("/add-user", addUser);
+//GET ALL USERS
+router.get("/get-users", getAllUsers);
+
+//GET SINGLE USER
+router.get("/get-users/:id", getSingleUser);
 
 //export routes
 module.exports = router;
